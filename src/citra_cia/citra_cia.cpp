@@ -727,7 +727,7 @@ int main(int argc, char* argv[]) {
     if (args.empty()) {
         return Usage();
     }
-    if (!user_dir.empty() && user_dir.back() != '/' && user_dir.back() != '\') {
+    if (!user_dir.empty() && user_dir.back() != '/' && user_dir.back() != '\\') {
         user_dir += '/';
     }
     FileUtil::SetUserPath(user_dir);
