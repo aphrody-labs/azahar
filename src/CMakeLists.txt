@@ -210,6 +210,10 @@ if (ENABLE_QT) # Or any other hypothetical future frontends
     add_subdirectory(citra_meta)
 endif()
 
+if (ENABLE_CIA_TOOL)
+    add_subdirectory(citra_cia)
+endif()
+
 if (ENABLE_LIBRETRO)
     add_subdirectory(citra_libretro)
 endif()

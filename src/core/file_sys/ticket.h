@@ -73,6 +73,10 @@ public:
         return serialized_size;
     }
 
+    u8 GetCommonKeyIndex() const {
+        return ticket_body.common_key_index;
+    }
+
     bool IsPersonal() const;
 
     bool HasRights(u16 index) {

@@ -132,6 +132,10 @@ public:
     NCCHCryptoFile(const std::string& out_file, bool encrypted_content);
 
     void Write(const u8* buffer, std::size_t length);
+    /// Allows writing NCCH content with its crypto removed (used by the headless CIA tool).
+    void AuthorizeDecryption() {
+        decryption_authorized = true;
+    }
     bool IsError() {
         return is_error;
     }
