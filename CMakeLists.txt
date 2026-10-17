@@ -232,7 +232,8 @@ if (CITRA_USE_PRECOMPILED_HEADERS)
     endif()
 endif()
 
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit)
+# A submodule checkout has a .git file instead of a directory: there is no hooks directory to fill.
+if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/.git AND NOT EXISTS ${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit)
     message(STATUS "Copying pre-commit hook")
     file(COPY hooks/pre-commit
         DESTINATION ${PROJECT_SOURCE_DIR}/.git/hooks)
