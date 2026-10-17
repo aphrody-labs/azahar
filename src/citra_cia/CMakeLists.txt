@@ -10,7 +10,7 @@ if (BSD STREQUAL "NetBSD")
 endif()
 
 create_target_directory_groups(citra_cia)
-target_link_libraries(citra_cia PRIVATE citra_common citra_core)
+target_link_libraries(citra_cia PRIVATE citra_common citra_core cryptopp fmt)
 
 if(UNIX AND NOT APPLE)
     install(TARGETS citra_cia RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
